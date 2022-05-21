@@ -11,8 +11,10 @@ The scripts for generating the results of the ML solutions in the paper. This sc
 **To reproduce the results, please follow these steps:**
 1. Download [the radar aided beam prediction dataset of DeepSense 6G/Scenario 9](https://deepsense6g.net/radar-aided-beam-prediction/).
 2. Download (or clone) the repository into a directory.
-3. Extract the dataset into the repository directory (The dataset directory can be changed at line 28 of scenario9_radar_beam-prediction_inference.py)
-4. Comment in one of the lines 21-23 of scenario9_radar_beam-prediction_inference.py to select radar-cube, range-velocity and range-angle ML solutions.
+3. Extract the dataset into the repository directory 
+   (If needed, the dataset directory can be changed at line 28 of scenario9_radar_beam-prediction_inference.py)
+4. Comment in one of the lines 21-23 of scenario9_radar_beam-prediction_inference.py.
+   Activating the lines allow selecting the radar-cube, range-velocity and range-angle ML solutions, respectively.
 5. Run scenario9_radar_beam-prediction_inference.py file.
 
 If you have any questions regarding the code and used dataset, please write to DeepSense 6G dataset forum https://deepsense6g.net/forum/ or contact [Umut Demirhan](mailto:udemirhan@asu.edu?subject=[GitHub]%20Beam%20prediction%20implementation).
