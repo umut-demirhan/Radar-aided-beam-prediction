@@ -15,7 +15,7 @@ The scripts for generating the results of the ML solutions in the paper. This sc
 4. Comment in one of the lines 21-23 of scenario9_radar_beam-prediction_inference.py to select radar-cube, range-velocity and range-angle ML solutions.
 5. Run scenario9_radar_beam-prediction_inference.py file.
 
-If you have any questions regarding the code and used dataset, please write to DeepSense 6G dataset forum https://deepsense6g.net/forum/ or contact [Umut Demirhan](mailto:udemirhan@asu.edu?subject=[GitHub]%20Source%20Beam%20Prediction).
+If you have any questions regarding the code and used dataset, please write to DeepSense 6G dataset forum https://deepsense6g.net/forum/ or contact [Umut Demirhan](mailto:udemirhan@asu.edu?subject=[GitHub]%20Beam%20prediction%20implementation).
 
 # License and Referencing
 This code package is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/). 
