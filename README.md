@@ -2,10 +2,7 @@
 This is a python code package related to the following article:
 Umut Demirhan, and Ahmed Alkhateeb, "[Radar Aided 6G Beam Prediction: Deep Learning Algorithms and Real-World Demonstration](https://ieeexplore.ieee.org/document/9771564),", in 2022 IEEE Wireless Communications and Networking Conference (WCNC), 2022, pp. 2655-2660
 
-# Abstract of the Article
-Adjusting the narrow beams at millimeter wave (mmWave) and terahertz (THz) MIMO communication systems is associated with high beam training overhead, which makes it hard for these systems to support highly-mobile applications. This overhead can potentially be reduced or eliminated if sufficient awareness about the transmitter/receiver locations and the surrounding environment is available. In this paper, efficient deep learning solutions that leverage radar sensory data are developed to guide the mmWave beam prediction and significantly reduce the beam training overhead. Our solutions integrate radar signal processing approaches to extract the relevant features for the learning models, and hence optimize their complexity and inference time. The proposed machine learning based radar-aided beam prediction solutions are evaluated using a large-scale real-world mmWave radar/communication dataset and their capabilities were demonstrated in a realistic vehicular communication scenario. In addition to completely eliminating the radar/communication calibration overhead, the proposed algorithms are able to achieve around 90% top-5 beam prediction accuracy while saving 93% of the beam training overhead. This highlights a promising direction for addressing the training overhead challenge in mmWave/THz communication systems.
-
-# Code Package Content 
+# Instructions to Reproduce the Results 
 The scripts for generating the results of the ML solutions in the paper. This script adopts Scenario 9 of DeepSense6G dataset.
 
 **To reproduce the results, please follow these steps:**
@@ -18,6 +15,9 @@ The scripts for generating the results of the ML solutions in the paper. This sc
 5. Run scenario9_radar_beam-prediction_inference.py file.
 
 If you have any questions regarding the code and used dataset, please write to DeepSense 6G dataset forum https://deepsense6g.net/forum/ or contact [Umut Demirhan](mailto:udemirhan@asu.edu?subject=[GitHub]%20Beam%20prediction%20implementation).
+
+# Abstract of the Article
+Adjusting the narrow beams at millimeter wave (mmWave) and terahertz (THz) MIMO communication systems is associated with high beam training overhead, which makes it hard for these systems to support highly-mobile applications. This overhead can potentially be reduced or eliminated if sufficient awareness about the transmitter/receiver locations and the surrounding environment is available. In this paper, efficient deep learning solutions that leverage radar sensory data are developed to guide the mmWave beam prediction and significantly reduce the beam training overhead. Our solutions integrate radar signal processing approaches to extract the relevant features for the learning models, and hence optimize their complexity and inference time. The proposed machine learning based radar-aided beam prediction solutions are evaluated using a large-scale real-world mmWave radar/communication dataset and their capabilities were demonstrated in a realistic vehicular communication scenario. In addition to completely eliminating the radar/communication calibration overhead, the proposed algorithms are able to achieve around 90% top-5 beam prediction accuracy while saving 93% of the beam training overhead. This highlights a promising direction for addressing the training overhead challenge in mmWave/THz communication systems.
 
 # License and Referencing
 This code package is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/). 
