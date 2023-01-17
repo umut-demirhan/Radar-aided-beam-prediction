@@ -14,6 +14,13 @@ The scripts for generating the results of the ML solutions in the paper. This sc
    Activating the lines allow selecting the radar-cube, range-velocity and range-angle ML solutions, respectively.
 5. Run scenario9_radar_beam-prediction_inference.py file.
 
+**Results of the script**
+| Solution       | Top-1 | Top-2 | Top-3 | Top-4 | Top-5 |
+| :------------- | ----- | ----- | ----- | ----- | ----- |
+| Radar Cube     | 41.65 | 60.88 | 74.37 | 87.18 | 91.91 |
+| Range Velocity | 42.33 | 60.88 | 74.20 | 83.81 | 89.54 |
+| Range Angle    | 45.70 | 65.60 | 79.60 | 88.36 | 93.25 |
+
 If you have any questions regarding the code and used dataset, please write to DeepSense 6G dataset forum https://deepsense6g.net/forum/ or contact [Umut Demirhan](mailto:udemirhan@asu.edu?subject=[GitHub]%20Beam%20prediction%20implementation).
 
 # Abstract of the Article
