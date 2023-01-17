@@ -20,7 +20,7 @@ def load_radar_data(root_dir, csv_file, radar_column='unit1_radar_1', label_colu
     csv_file = pd.read_csv(os.path.join(root_dir, csv_file))
     
     X = loadmat(os.path.abspath(root_dir +  csv_file[radar_column][0]))['data'] # Load the first data point
-    X = np.zeros((len(csv_file),) + X.shape, dtype=type(X))
+    X = np.zeros((len(csv_file),) + X.shape, dtype=X.dtype)
     for i in tqdm(range(len(csv_file))):
         X[i] = loadmat(os.path.abspath(root_dir +  csv_file[radar_column][i]))['data']
     y = np.array(csv_file[label_column])

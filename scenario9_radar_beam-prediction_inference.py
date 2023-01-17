@@ -13,14 +13,14 @@ Date: 10/29/2021
 import torch
 
 from radar_network_models import LeNet_RadarCube, LeNet_RangeAngle, LeNet_RangeVelocity
-from radar_preprocessing import range_velocity_map, range_angle_map, radar_cube
+from radar_preprocessing_torch import range_velocity_map, range_angle_map, radar_cube
 from network_functions import test_loop, evaluate_predictions
 from dataset import load_radar_data
 
 # Model Name
-# model_folder = 'type0_split100_batchsize32_rng0_epoch40' #  Radar Cube solution
+model_folder = 'type0_split100_batchsize32_rng0_epoch40' #  Radar Cube solution
 # model_folder = 'type1_split100_batchsize32_rng0_epoch40' # Range-Velocity solution
-model_folder = 'type2_split100_batchsize32_rng0_epoch40' # Range-Angle solution
+# model_folder = 'type2_split100_batchsize32_rng0_epoch40' # Range-Angle solution
 
 model_path = './saved_models/' + model_folder + '/'
 
