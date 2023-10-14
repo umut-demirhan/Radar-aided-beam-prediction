@@ -57,9 +57,9 @@ topk = 5
 y, y_hat, network_time_per_sample = test_loop(X_test, y_test, net, device, model_path=model_path+'modelbest.pth') # Best model
 
 # This model was trained on flipped power levels..
-# To match them, apply the transformation
-y_hat = torch.flip(y_hat, dims=[1])
-y = y - 2
+# To flip the labels in [1, 64], apply the transformation
+y = 65 - y
+
 topk_acc_best, beam_dist_best = evaluate_predictions(y, y_hat, k=topk)
 print('Best model:')
 print('Top-k Accuracy: ' + '-'.join(['%.2f' for i in range(topk)]) % tuple(topk_acc_best*100))
