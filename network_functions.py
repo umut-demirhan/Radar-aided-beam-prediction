@@ -13,16 +13,18 @@ import torch
 from tqdm import tqdm
 import numpy as np
 import sys
+import os
+import pandas as pd 
 
 def train_loop(X_train, y_train, net, optimizer, criterion, device, batch_size=64):
     net.train()
-    
-    running_acc = 0.0
-    running_loss = 0.0
+        
+    running_acc = 0
+    running_loss = 0
+    running_size = 0
     with tqdm(iterate_minibatches(X_train, y_train, batch_size, shuffle=True), unit=' batch', 
               total=int(np.ceil(X_train.shape[0]/batch_size)), file=sys.stdout, leave=True) as tepoch:
         for batch_x, batch_y in tepoch:
-            
             batch_x, batch_y = batch_x.to(device), batch_y.to(device)
             
             optimizer.zero_grad() # Make the gradients zero
@@ -33,12 +35,14 @@ def train_loop(X_train, y_train, net, optimizer, criterion, device, batch_size=6
             
             predictions = batch_y_hat.argmax(dim=1, keepdim=True).squeeze()
             
-            batch_correct = (predictions == batch_y).sum().item()
-            running_acc += batch_correct
-            batch_loss = loss.item()
-            running_loss += batch_loss
+            running_acc += (predictions == batch_y).sum().item()
+            running_loss += loss.item() * batch_x.shape[0]
+            running_size += batch_x.shape[0]
+            curr_acc = 100. * running_acc/running_size
+            curr_loss = running_loss/running_size
+
             
-            tepoch.set_postfix(loss=batch_loss, accuracy=100. * batch_correct/batch_size)
+            tepoch.set_postfix(loss=curr_loss, accuracy=curr_acc)
             
         curr_acc = 100. * running_acc/len(X_train)
         curr_loss = running_loss/np.ceil(X_train.shape[0]/batch_size)
@@ -51,7 +55,7 @@ def eval_loop(X_val, y_val, net, criterion, device, batch_size=64):
     running_acc = 0.0
     running_loss = 0.0
     with torch.no_grad():
-        for batch_x, batch_y in iterate_minibatches(X_val, y_val, batch_size, shuffle=True):
+        for batch_x, batch_y in iterate_minibatches(X_val, y_val, batch_size, shuffle=False):
             
             batch_x, batch_y = batch_x.to(device), batch_y.to(device)
             
@@ -59,18 +63,19 @@ def eval_loop(X_val, y_val, net, criterion, device, batch_size=64):
     
             predictions = batch_y_hat.argmax(dim=1, keepdim=True).squeeze()
             running_acc += (predictions == batch_y).sum().item()
-            running_loss += criterion(batch_y_hat, batch_y).item()
+            running_loss += criterion(batch_y_hat, batch_y).item() * batch_x.shape[0]
         
     
     curr_acc = 100. * running_acc/len(X_val)
-    curr_loss = running_loss/np.ceil(X_val.shape[0]/batch_size)
+    curr_loss = running_loss/len(X_val)
     print('Validation: [accuracy=%.2f, loss=%.4f]' % (curr_acc, curr_loss), flush=True)
     
     return curr_loss, curr_acc
     
-def test_loop(X_test, y_test, net, device, model_path):
+def test_loop(X_test, y_test, net, device, model_path=None):
     # Network Setup
-    net.load_state_dict(torch.load(model_path))
+    if model_path is not None:
+        net.load_state_dict(torch.load(model_path))
     net.eval()
     
     # Timers
