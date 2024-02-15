@@ -21,11 +21,11 @@ from network_functions import train_loop, eval_loop, test_loop, evaluate_predict
 from dataset import load_radar_data
 
 # Dataset Files
-root_dir = r'C:\Users\Umt\Desktop\Scenario9\development_dataset'
+root_dir = r'.\Scenario9\development_dataset'
 csv_files = ['scenario9_dev_%s.csv'%s for s in ['train', 'val', 'test']]
 
 # Solution Type Selection
-data_type = 2 # 0: Radar Cube / 1: Range Velocity / 2: Range Angle
+data_type = 0 # 0: Radar Cube / 1: Range Velocity / 2: Range Angle
 print('Model/Data Type: %s' % ['Radar Cube', 'Range Velocity', 'Range Angle'][data_type])
 
 # Training Settings
@@ -72,6 +72,7 @@ while os.path.exists(os.path.join(models_directory, folder_name + '_v%i'%c, ''))
 model_directory = os.path.join(models_directory, folder_name + '_v%i'%c, '')
 if not os.path.exists(model_directory):
     os.makedirs(model_directory)
+print('Saving the models to %s' % models_directory)
 
 # Reproducibility
 torch.manual_seed(rng_seed)
