@@ -42,4 +42,4 @@ If you in any way use this code for research that results in publications, pleas
 > U. Demirhan and A. Alkhateeb, "[Radar Aided 6G Beam Prediction: Deep Learning Algorithms and Real-World Demonstration](https://ieeexplore.ieee.org/document/9771564)," 2022 IEEE Wireless Communications and Networking Conference (WCNC), 2022, pp. 2655-2660, doi: 10.1109/WCNC51071.2022.9771564.
 
 If you use the [DeepSense 6G dataset](www.deepsense6g.net), please also cite our dataset article:
-> A. Alkhateeb, G. Charan, T. Osman, A. Hredzak, and N. Srinivas, “DeepSense 6G: large-scale real-world multi-modal sensing and communication datasets,” to be available on arXiv, 2022. [Online]. Available: https://www.DeepSense6G.net
+> A. Alkhateeb, G. Charan, T. Osman, A. Hredzak, J. Morais, U. Demirhan, and N. Srinivas, “DeepSense 6G: large-scale real-world multi-modal sensing and communication datasets,” IEEE Communications Magazine, vol. 61, no. 9, pp. 122–128, 2023.
